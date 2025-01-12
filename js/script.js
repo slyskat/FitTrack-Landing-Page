@@ -88,3 +88,48 @@ window.addEventListener('scroll', () => {
         navbar.classList.toggle('scrolled', window.scrollY > 50);
     }
 });
+
+// Hamburger menu
+const hamburger = document.querySelector('.hamburger');
+const navLinks = document.querySelector('.nav-links');
+
+hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+    // Toggle the hamburger to X
+    hamburger.classList.toggle('open');
+
+    // Toggle the icons
+    const icon = hamburger.querySelector('i');
+    if (hamburger.classList.contains('open')) {
+        icon.classList.remove('fa-bars');
+        icon.classList.add('fa-times');
+    } else {
+        icon.classList.remove('fa-times');
+        icon.classList.add('fa-bars');
+    }
+});
+
+
+// Assuming this code is added after the previous hamburger code
+const navbar = document.querySelector('.navbar');  // Add reference to the navbar
+
+hamburger.addEventListener('click', () => {
+    // Toggle the nav-links visibility
+    navLinks.classList.toggle('active');
+
+    // Toggle the hamburger icon to X
+    hamburger.classList.toggle('open');
+
+    // Toggle the icons between hamburger and X
+    const icon = hamburger.querySelector('i');
+    if (hamburger.classList.contains('open')) {
+        icon.classList.remove('fa-bars');
+        icon.classList.add('fa-times');
+    } else {
+        icon.classList.remove('fa-times');
+        icon.classList.add('fa-bars');
+    }
+
+    // Toggle the navbar's 'active' class to show the nav-links
+    navbar.classList.toggle('active');
+});
