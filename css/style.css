@@ -120,6 +120,7 @@ button:hover, .btn:hover {
 
 /* Hamburger Menu */
 .hamburger {
+    display: none;
    cursor: pointer;
    z-index: 1001;
    font-size: 30px;
